@@ -2,6 +2,11 @@
 <h1>Introduction</h1>
 <hr>
 <p>A simple Todo application built in Django (including the Django REST Framework for API CRUD operations)</p>
+<h1>Requirements</h1>
+<hr>
+<p><ul>
+  <li>Python3</li>
+  <li>Django2</li></ul></p>
 <h1>Run the application</h1>
 <hr>
 <p>Run this command to start the backend server in the [backend] directory: [python manage.py runserver] (You have to run this command while you are sourced into the virtual environment)</p>
