@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet"> 
+     <link rel="stylesheet" href="{% static 'todo/css/style.css' %}">
+	<title>Todo app</title>
+
+</head>
+
+<body>
+     <div id="orange">
+	<div class="container">
+         <div class="header">
+             <div class="clear">
+                 <a href="{% url 'complete' %}"><i class="fa fa-refresh" onclick="removeAll()" aria-hidden="true"></i></a>
+
+             </div>
+             <div id="date"></div>
+         </div>
+         <div class="content">
+             <form action="{% url 'add' %}" method="POST">
+                 {% csrf_token %}
+             <div class="add-item" id="add" >
+                 {{form.text}}
+                 <button type="submit" class="btn btn-info"><i class="fa fa-plus-circle" aria-hidden="true"></i>
+</button>
+<!--                <input type="text" id='addinput' name="text" id="" placeholder="Add a todo">-->
+
+             </div>
+             </form>
+             <ul id="list">
+
+                 {% for t in myTodo %}
+						  {% if t.complete %}
+						    <li class="list-group-item todo-completed">{{t.todoText}}
+                            <a href="{% url 'delete' t.pk %}"><i class="fa fa-trash-o" onclick="removeMe()" aria-hidden="true"></i></a>
+                            </li>
+
+						  {% else%}
+						    <li class="list-group-item">{{t.todoText}}
+                            <a href="{% url 'delete' t.pk %}"><i class="fa fa-trash-o" onclick="removeMe()" aria-hidden="true"></i></a>
+                            </li>
+
+						  {% endif %}
+						{% endfor%}
+             </ul>
+             </div>
+
+         
+	</div>
+         </div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+ <script src="{% static 'todo/particles.js' %}"></script>
+    <script src="{% static 'todo/app.js' %}"></script>
+    <script src="{% static 'todo/todo.js' %}">
+	</script>
+
+</body>
+
+</html>

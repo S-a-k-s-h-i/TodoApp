@@ -1,0 +1,79 @@
+body{
+   background-color:#d372ff;
+}
+.particles-js-canvas-el {
+    margin-top: -600px;
+}
+.container{
+    margin: 0;
+    padding: 0;
+    width: 380px;
+    height:auto;
+    background-color: white;
+    margin: 40px auto;
+   border-radius: 20px;
+    font-family: 'Sriracha', cursive;
+    font-size: 18px;
+    position: relative;
+}
+.header{
+    height: 220px;
+    background: url("/static/todo/make-this-day-great-quote-board-2255441.jpg") no-repeat ;
+    background-size: cover;
+}
+.fa-refresh{
+    float: right;
+    color: white;
+    font-size:20px;
+    cursor: pointer;
+}
+#list {
+    padding-left: 0px;
+}
+li{
+    list-style-type: none;
+    margin-bottom: auto;
+}
+.text{
+    display: inline-block;
+}
+
+.fa-trash-o{
+    float: right;
+    font-size: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.add-item{
+   padding:4px;
+
+}
+#addinput{
+    padding-right: 60px;
+}
+.fa-plus-circle{
+    font-size: 20px;
+}
+#date{
+    color: white;
+}
+input[type="checkbox"]{
+/*
+    position: relative;
+    float: right;
+    top: 10px;
+    right: 12px;
+    
+*/
+    border-radius: 50%;
+}
+.todo-completed {
+	text-decoration: line-through;
+	background: rgba(149, 165, 166, .3);
+}
+.list-group-item {
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    font-size: 18px;
+}
+
